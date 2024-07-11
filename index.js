@@ -1,25 +1,26 @@
-// Declare customerName in global scope and assign it the value 'bob'
-var customerName = 'bob';
+  var customerName = 'bob';
+  function returnCustomerName() {
+  return customerName;
+ }
+ // 2) Fix the Scope
+ function upperCaseCustomerName() {
+  customerName = customerName.toUpperCase();
+ }
 
-// Function to uppercase the customerName variable
-function upperCaseCustomerName() {
-  return customerName.toUpperCase();
-}
+ // 3) Fix the Scope
+ var bestCustomer;
 
-// Function to set the best customer
-function setBestCustomer() {
-  bestCustomer = 'not bob'; // Assigning without var will implicitly create a global variable
-}
+ function setBestCustomer() {
+  bestCustomer = 'not bob';
+ }
 
-// Function to overwrite the best customer
-function overwriteBestCustomer() {
-  bestCustomer = 'maybe bob'; // Assigning without var will implicitly create a global variable
-}
+ // 4) Fix the Scope
+ function overwriteBestCustomer() {
+  bestCustomer = 'maybe bob';
+ }
 
-// Constant in global scope for least favorite customer
-const leastFavoriteCustomer = 'Alice';
-
-// Function to attempt to change the least favorite customer
-function changeLeastFavoriteCustomer() {
-  leastFavoriteCustomer = 'Bob'; // Attempting to change a constant will result in an error
-}
+ // 5) Fix the Scope
+ const leastFavoriteCustomer = 'not bob';
+ function changeLeastFavoriteCustomer() {
+  leastFavoriteCustomer = 'someone else';
+ }
